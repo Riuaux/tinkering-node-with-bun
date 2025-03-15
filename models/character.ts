@@ -21,6 +21,11 @@ export const getCharacterById = (id: number): Character | undefined => {
 };
 
 export const addCharacter = (character: Character): Character => {
+  if (characters.has(character.id.toString())) {
+    console.error(`Character with id ${character.id} already exists`);
+    return character;
+  }
+
   const newCharacter = {
     ...character,
     id: new Date().getTime(),
@@ -53,3 +58,4 @@ export const deleteCharacter = (id: number): boolean => {
   characters.delete(id.toString());
   return true;
 };
+
