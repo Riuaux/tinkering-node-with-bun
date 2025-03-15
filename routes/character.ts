@@ -69,7 +69,8 @@ export const characterRouter = async (
 
     if (result.issues) {
       res.statusCode = 400;
-      res.end(JSON.stringify({ message: result.issues }));
+      // res.end(JSON.stringify({ message: result.issues.toString() }));
+      res.end(JSON.stringify({ message: "Result has issues" }));
       return;
     }
 

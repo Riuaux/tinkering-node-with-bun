@@ -41,7 +41,10 @@ export const authRouter = async (req: IncomingMessage, res: ServerResponse) => {
       } else {
         res.end(JSON.stringify({ message: "Internal Server Error" }));
       }
+      return;
     }
+
+    return;
   }
 
   if (url === "/auth/login" && method === HttpMethod.POST) {

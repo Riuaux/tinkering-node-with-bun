@@ -17,10 +17,16 @@ const server = createServer(async (req, res) => {
       } else {
         res.statusCode = 404;
         res.end(JSON.stringify({ message: "Endpoint Not Found" }));
+        return;
       }
     } catch (_err) {
       res.statusCode = 500;
-      res.end(JSON.stringify({ message: "Internal Server Error" }));
+      res.end(
+        JSON.stringify({
+          message: `Internal Server Error (${_err})`,
+        })
+      );
+      return;
     }
   });
 });
