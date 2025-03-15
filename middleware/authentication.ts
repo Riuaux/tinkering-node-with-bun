@@ -1,7 +1,7 @@
 import type { IncomingMessage, ServerResponse } from "http";
 import { verify, type JwtPayload } from "jsonwebtoken";
 import { isTokenRevoked } from "../models";
-import config from "../token";
+import config from "../config";
 
 export interface AuthenticatedRequest extends IncomingMessage {
   user?: JwtPayload | string;

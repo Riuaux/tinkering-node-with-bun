@@ -11,7 +11,7 @@ import {
 import { parseBody } from "../utils/parseBody";
 import { safeParse } from "valibot";
 import { sign } from "jsonwebtoken";
-import config from "../token";
+import config from "../config";
 import type { AuthenticatedRequest } from "../middleware/authentication";
 
 export const authRouter = async (req: IncomingMessage, res: ServerResponse) => {
