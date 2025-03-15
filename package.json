@@ -2,6 +2,10 @@
   "name": "curso-node-intensivo",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "dev": "bun run index.ts"
+  },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
     "@types/bcrypt": "^5.0.2",
